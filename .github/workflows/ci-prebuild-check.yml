@@ -41,3 +41,4 @@ jobs:
         with:
           args: >
             -Dsonar.javascript.lcov.reportPaths=coverage/libs/ui/lcov.info
+          projectBaseDir: libs/ui
