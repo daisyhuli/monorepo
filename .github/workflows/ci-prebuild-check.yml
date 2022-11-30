@@ -33,8 +33,6 @@ jobs:
       - name: Run unit tests coverage
         run: yarn lib:cov
 
-      - name: Change absolute path to relative path in coverage
-        run: sed -i "s|SF:/.*/src/|SF:/github/workspace/src/|g" coverage/lcov.info
       #########################
         # Run SonarCloud Analysis
       #########################
