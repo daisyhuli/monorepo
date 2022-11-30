@@ -7,7 +7,7 @@ export default {
     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: 'coverage',
+  coverageDirectory: '../../coverage/libs/ui',
   coverageReporters: ["json", "lcov", "text", "text-summary"],
   collectCoverage: true,
   testResultsProcessor: "jest-sonar-reporter",
