@@ -1,0 +1,76 @@
+name: prebuild-check
+on:
+    pull_request:
+        branches:
+        paths:
+          - 'libs/**'
+          - '.github/workflows/**'
+jobs:
+    commitlinting-check:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+            with:
+                fetch-depth: 0
+          - uses: wagoid/commitlint-github-action@v3
+    main:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Setup Node
+            uses: actions/setup-node@v3
+            with:
+                node-version: 16
+                always-auth: true
+          - name: Checkout Code
+            uses: actions/checkout@v3
+            with:
+                fetch-depth: 0
+
+          - name: Install modules
+            run: yarn install --frozen-lockfile
+
+          - name: Run lint
+            run: yarn lint:all
+
+          - name: Run unit tests
+            run: yarn test:all
+    sonarcloud-scan:
+        runs-on: ubuntu-latest
+        steps:
+           - name: Setup Node
+            uses: actions/setup-node@v3
+            with:
+                node-version: 16
+                always-auth: true
+                registry-url: https://npm.fontawesome.com/
+                scope: '@fortawesome'
+            env:
+                NODE_AUTH_TOKEN: ${{secrets.FONTAWESOME_TOKEN}}
+          - name: Checkout Code
+            uses: actions/checkout@v3
+            with:
+                fetch-depth: 0
+
+          - name: Install modules
+            run: yarn install --frozen-lockfile
+
+          - name: Run lint
+            run: yarn lint:all
+
+          - name: Run unit tests
+            run: yarn test:all
+
+          - name: Checkout Code
+            uses: actions/checkout@v3
+            with:
+                fetch-depth: 0
+          #########################
+           # Run SonarCloud Analysis
+          #########################
+          - name: SonarCloud Scan
+            uses: sonarsource/sonarcloud-github-action@master
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            with:
+              projectBaseDir: libs

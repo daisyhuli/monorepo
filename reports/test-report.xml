@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+    <file path="/Users/daisywang/daisy/monorepo/libs/ui/src/lib/banner/banner.spec.tsx">
+        <testCase name="Banner should render successfully" duration="23"/>
+    </file>
+</testExecutions>

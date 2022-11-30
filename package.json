@@ -5,7 +5,18 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "test:lib": "nx test ui --watch",
+    "lib:cov": "nx test ui --codeCoverage",
+    "lint": "nx lint --fix",
+    "lint:lib": " nx run ui:lint",
+    "lint:all": "nx run-many --target=lint --projects=admin,ui",
+    "test:all": "nx run-many --target=test --projects=admin,ui"
+  },
+  "jestSonar": {
+    "reportPath": "reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "private": true,
   "dependencies": {
