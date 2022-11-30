@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "test:lib": "nx test ui --watch",
-    "lib:cov": "nx test ui --codeCoverage",
+    "lib:cov": "nx test ui --codeCoverage --watchAll=false --testResultsProcessor=jest-sonar-reporter",
     "lint": "nx lint --fix",
     "lint:lib": " nx run ui:lint",
     "lint:all": "nx run-many --target=lint --projects=admin,ui",
