@@ -30,6 +30,9 @@ jobs:
       - name: Run unit tests coverage
         run: yarn lib:cov
 
+      - name: Copy coverage to libs
+        run: mv coverage libs/ui
+
       #########################
       # Run SonarCloud Analysis
       #########################
@@ -38,4 +41,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+        with:
+          projectBaseDir: libs/ui
