@@ -1,4 +1,4 @@
-name: test-check
+name: test-check-sonarcloud
 on:
   push:
     branches:
