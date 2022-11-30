@@ -10,5 +10,5 @@ export default {
   coverageDirectory: '../../coverage/libs/ui',
   coverageReporters: ["json", "lcov", "text", "text-summary"],
   collectCoverage: true,
-  testResultsProcessor: "jest-sonar-reporter",
+  reporters: ['default',  'jest-sonar'],
 };
