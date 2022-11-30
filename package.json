@@ -13,11 +13,6 @@
     "lint:all": "nx run-many --target=lint --projects=admin,ui",
     "test:all": "nx run-many --target=test --projects=admin,ui"
   },
-  "jestSonar": {
-    "reportPath": "reports",
-    "reportFile": "test-reporter.xml",
-    "indent": 4
-  },
   "private": true,
   "dependencies": {
     "core-js": "^3.6.5",

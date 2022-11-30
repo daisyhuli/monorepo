@@ -40,5 +40,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.javascript.lcov.reportPaths=coverage/libs/ui/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
           projectBaseDir: libs/ui
