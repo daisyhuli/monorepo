@@ -30,8 +30,6 @@ jobs:
       - name: Run unit tests coverage
         run: yarn lib:cov
 
-      - name: Move the report path
-        run: mv test-report.xml coverage/libs/ui
       #########################
       # Run SonarCloud Analysis
       #########################
