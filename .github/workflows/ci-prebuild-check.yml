@@ -44,5 +44,4 @@ jobs:
         with:
           projectBaseDir: libs/ui
           args: >
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.testExecutionReportPaths=reports/test-report.xml
+            -Dsonar.javascript.lcov.reportPaths=coverage/libs/ui/lcov.info

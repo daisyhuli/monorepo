@@ -15,7 +15,7 @@
   },
   "jestSonar": {
     "reportPath": "reports",
-    "reportFile": "test-report.xml",
+    "reportFile": "test-reporter.xml",
     "indent": 4
   },
   "private": true,
