@@ -8,7 +8,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/ui',
-  coverageReporters: ['lcov','json','text'],
+  coverageReporters: ["json", "lcov", "text", "text-summary"],
   collectCoverage: true,
   testResultsProcessor: "jest-sonar-reporter"
 };
